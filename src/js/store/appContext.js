@@ -22,6 +22,12 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+			
+			state.actions.fetchPeople('https://swapi.dev/api/people/')
+			state.actions.fetchPlanets('https://swapi.dev/api/planets/')
+			state.actions.fetchVehicles('https://swapi.dev/api/vehicles/')
+
+			
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime

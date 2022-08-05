@@ -1,0 +1,30 @@
+body{
+    color: yellow;
+    background-color: black;
+    background-image: url("https://www.xtrafondos.com/wallpapers/star-wars-logo-3654.jpg");
+    width: 100%;
+    height:auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#NavbarForce{
+color: rgb(0, 172, 0);
+text-shadow: 0 0 0.2em rgb(0, 172, 0), 0 0 0.2em green,
+0 0 0.2em green;
+}
+
+#DV{
+    width: auto;
+    height: auto;
+    max-width: 1250px;
+    max-height: 900px;
+    margin-top: 300px;
+    justify-content: center;
+}
+

@@ -1,5 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+
 		store: {
 			demo: [
 				{
@@ -12,7 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			favorites: [],
+			people: [],
+			planets:[],
+			vehicles:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,9 +42,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			addFavorites: (name) => {
+				const { favorites } = getStore()
+				if (favorites.indexOf(name) == -1) {
+					setStore({ favorites: favorites.concat(name) })
+
+				}
+			},
+			deleteFavorites: (name) => {
+				const { favorites } = getStore()
+				const newFavorites = [...favorites.filter(item => (item !== name))]
+				setStore({ favorites: newFavorites })
+
+			},
+
+			fetchPeople: async (url) => {
+				let res = await fetch(url);
+				let data = await res.json();
+				setStore({ people: data.results });
+
+			},
+
+			fetchPlanets: async (url) =>{
+				let res = await fetch(url)
+				let data = await res.json();
+				setStore({planets: data.results});
+			},
+			
+			fetchVehicles: async (url) =>{
+				let res = await fetch(url)
+				let data = await res.json();
+				setStore({vehicles: data.results});
+			},
+			
+
+
 		}
+
 	};
 };
+
+
 
 export default getState;
